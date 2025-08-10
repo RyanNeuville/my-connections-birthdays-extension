@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.exoplatform.samples</groupId>
+  <artifactId>custom-extension</artifactId>
+  <version>1.0.x-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <modules>
+    <module>services</module>
+    <module>webapp</module>
+  </modules>
+  <repositories>
+    <repository>
+      <id>exo-public</id>
+      <url>https://repository.exoplatform.org/public/</url>
+    </repository>
+  </repositories>
+
+  <properties>
+    <org.exoplatform.commons-exo.version>7.0.0-M14</org.exoplatform.commons-exo.version>
+  </properties>
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.exoplatform.commons-exo</groupId>
+        <artifactId>commons-exo</artifactId>
+        <version>${org.exoplatform.commons-exo.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <distributionManagement>
+    <repository>
+      <id>exo-releases</id>
+        <url>https://repository.exoplatform.org/service/local/staging/deploy/maven2/</url>
+    </repository>
+      <snapshotRepository>
+          <id>exo-snapshots</id>
+          <url>https://repository.exoplatform.org/content/repositories/public-snapshots/</url>
+      </snapshotRepository>
+  </distributionManagement>
+
+</project>
