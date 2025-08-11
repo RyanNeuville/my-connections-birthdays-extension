@@ -9,23 +9,23 @@
 		<init-params>
 			<value-param>
 				<name>exo.branding.company.name</name>
-				<value>ACME corp</value>
+				<value>Kozao Africa</value>
 			</value-param>
 			<value-param>
 				<name>exo.branding.company.siteName</name>
-				<value>ACME digital village</value>
+				<value>Kozao Africa digital workspace</value>
 			</value-param>
 			<value-param>
 				<name>exo.branding.company.link</name>
-				<value>https://acme.com</value>
+				<value>https://www.kozao.co/</value>
 			</value-param>
 			<value-param>
 				<name>exo.branding.company.logo</name>
-				<value>${exo.branding.company.logo:/images/logo/DefaultLogo.png}</value>
+                <value>/images/logo/kozao_logo.png</value>
 			</value-param>
 			<value-param>
 				<name>exo.branding.company.favicon</name>
-				<value>${exo.branding.company.favicon:/images/favicon/DefaultFavicon.ico}</value>
+                <value>/images/logo/kozao_logo.ico</value>
 			</value-param>
 			<value-param>
 				<name>authentication.background</name>
@@ -43,14 +43,27 @@
 				<name>exo.branding.theme.path</name>
 				<value>${exo.branding.theme.path:war:/conf/branding/branding.less}</value>
 			</value-param>
-			<values-param>
-				<name>exo.branding.theme.variables</name>
-				<value>${exo.branding.theme.primaryColor:primaryColor:#476A9C}</value>
-				<value>${exo.branding.theme.secondaryColor:secondaryColor:#476a9c}</value>
-				<value>${exo.branding.theme.tertiaryColor:tertiaryColor:#476A9C}</value>
-				<value>${exo.branding.theme.greyColorLighten1:greyColorLighten1:#5f708a}</value>
-				<value>${exo.branding.theme.textColor:textColor:#333333}</value>
-			</values-param>
-		</init-params>
+            <values-param>
+                <name>exo.branding.theme.variables</name>
+                <value>${exo.branding.theme.primaryColor:primaryColor:#FFCC00}</value>
+                <value>${exo.branding.theme.secondaryColor:secondaryColor:#333333}</value>
+                <value>${exo.branding.theme.tertiaryColor:tertiaryColor:#FFCC00}</value>
+                <value>${exo.branding.theme.greyColorLighten1:greyColorLighten1:#CCCCCC}</value>
+                <value>${exo.branding.theme.textColor:textColor:#1A1A1A}</value>
+            </values-param>
+        </init-params>
 	</component>
+    <!-- register new event listener that will be fired when a user logs in-->
+    <external-component-plugins>
+        <!-- The service ListenerService registers all listeners with their respective event names -->
+        <target-component>org.exoplatform.services.listener.ListenerService</target-component>
+        <component-plugin>
+            <!-- The event name, it identifies an event, we can have many listeners for the same event -->
+            <name>exo.core.security.ConversationRegistry.register</name>
+            <!-- This is the function in ListenerService called to register each new listener -->
+            <set-method>addListener</set-method>
+            <!-- Here you put the FQN of the new listener -->
+            <type>org.exoplatform.samples.listener.LoginEventListener</type>
+        </component-plugin>
+    </external-component-plugins>
 </configuration>

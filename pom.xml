@@ -42,5 +42,4 @@
           <url>https://repository.exoplatform.org/content/repositories/public-snapshots/</url>
       </snapshotRepository>
   </distributionManagement>
-
 </project>
