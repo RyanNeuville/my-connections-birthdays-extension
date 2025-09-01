@@ -8,11 +8,6 @@ import org.exoplatform.services.log.Log;
 import org.exoplatform.services.security.ConversationRegistry;
 import org.exoplatform.services.security.ConversationState;
 
-// La classe LoginEventListener doit étendre la classe Listener
-// La classe Listener prend deux types paramétrés qui seront transmis à l'objet événement et utilisés respectivement comme :
-// 1- Objet source d'événement
-// 2- Objet de données d'événement
-
 public class LoginEventListener extends Listener<ConversationRegistry, ConversationState>{
 
     // Objet Logger pour cet écouteur

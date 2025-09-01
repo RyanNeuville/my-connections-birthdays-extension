@@ -6,8 +6,8 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="custom-extension-services" />
-        <module name="custom-extension-webapp" />
+        <module name="my-connections-birthdays-extension-services" />
+        <module name="my-connections-birthdays-extension-webapp" />
       </profile>
     </annotationProcessing>
   </component>
